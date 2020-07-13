@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * @program: potato-parent
+ * @program: seryu-framework
  * @description: bean转换
  * @author: xujunjie
  * @create: 2020-05-06 11:14

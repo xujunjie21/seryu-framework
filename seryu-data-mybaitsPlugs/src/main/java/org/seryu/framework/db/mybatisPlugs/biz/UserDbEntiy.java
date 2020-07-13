@@ -4,7 +4,7 @@ import lombok.Data;
 import lombok.ToString;
 
 /**
- * @program: potato-parent
+ * @program: seryu-framework
  * @description: 用户持久层信息
  * @author: xujunjie
  * @create: 2020-06-05 17:26
