@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/seryu-data-mybaitsPlugs/seryu-data-mybaitsPlugs.iml" filepath="$PROJECT_DIR$/seryu-data-mybaitsPlugs/seryu-data-mybaitsPlugs.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/seryu-framework.iml" filepath="$PROJECT_DIR$/.idea/seryu-framework.iml" />
+      <module fileurl="file://$PROJECT_DIR$/seryu-framework-data/seryu-framework-data.iml" filepath="$PROJECT_DIR$/seryu-framework-data/seryu-framework-data.iml" />
+    </modules>
+  </component>
+</project>
