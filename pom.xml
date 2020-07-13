@@ -7,7 +7,7 @@
     <groupId>org.seryu.framework</groupId>
     <artifactId>seryu-framework-parent</artifactId>
     <packaging>pom</packaging>
-    <version>1.0-SNAPSHOT</version>
+    <version>1.0</version>
     <modules>
         <module>seryu-framework-data</module>
         <module>seryu-data-mybaitsPlugs</module>
@@ -18,7 +18,7 @@
         <swagger.version>1.5.22</swagger.version>
         <hutool-all.version>5.2.0</hutool-all.version>
         <slf4j.version>1.7.30</slf4j.version>
-        <seryu.version>1.0-SNAPSHOT</seryu.version>
+        <seryu.version>1.0</seryu.version>
     </properties>
 
     <dependencyManagement>
