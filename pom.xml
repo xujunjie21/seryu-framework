@@ -11,6 +11,7 @@
     <modules>
         <module>seryu-framework-data</module>
         <module>seryu-data-mybaitsPlugs</module>
+        <module>seryu-framework-web</module>
     </modules>
 
     <properties>
