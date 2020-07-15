@@ -1,4 +1,4 @@
-package org.seryu.framework.db.mybatisPlugs.biz;
+package org.seryu.framework.data.biz;
 
 /**
  * @program: seryu-framework

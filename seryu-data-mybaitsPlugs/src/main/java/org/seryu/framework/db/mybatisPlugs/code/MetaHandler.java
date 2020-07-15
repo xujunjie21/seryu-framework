@@ -2,8 +2,8 @@ package org.seryu.framework.db.mybatisPlugs.code;
 
 import com.baomidou.mybatisplus.core.handlers.MetaObjectHandler;
 import org.apache.ibatis.reflection.MetaObject;
-import org.seryu.framework.db.mybatisPlugs.biz.DbUserThreadLocal;
-import org.seryu.framework.db.mybatisPlugs.biz.UserDbEntiy;
+import org.seryu.framework.data.biz.DbUserThreadLocal;
+import org.seryu.framework.data.biz.UserDbEntiy;
 import org.springframework.stereotype.Component;
 
 import java.util.Date;
