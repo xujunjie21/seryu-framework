@@ -9,7 +9,6 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>org.seryu.framework</groupId>
     <artifactId>seryu-data-mybaitsPlugs</artifactId>
 
     <dependencies>
