@@ -12,6 +12,8 @@
         <module>seryu-framework-data</module>
         <module>seryu-data-mybaitsPlugs</module>
         <module>seryu-framework-web</module>
+        <module>seryu-framework-security</module>
+        <module>seryu-framework-security-interface</module>
     </modules>
 
     <properties>
@@ -20,6 +22,12 @@
         <hutool-all.version>5.2.0</hutool-all.version>
         <slf4j.version>1.7.30</slf4j.version>
         <seryu.version>1.0</seryu.version>
+        <jjwt.version>0.10.6</jjwt.version>
+        <spring.version>5.2.3.RELEASE</spring.version>
+        <mybatis-plus.version>3.2.0</mybatis-plus.version>
+        <springboot-verison>2.2.3.RELEASE</springboot-verison>
+        <servlet.version>2.5</servlet.version>
+        <fastjson.version>1.2.60</fastjson.version>
     </properties>
 
     <dependencyManagement>
@@ -27,6 +35,16 @@
             <dependency>
                 <groupId>org.seryu.framework</groupId>
                 <artifactId>seryu-framework-data</artifactId>
+                <version>${seryu.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.seryu.framework</groupId>
+                <artifactId>seryu-framework-web</artifactId>
+                <version>${seryu.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.seryu.framework</groupId>
+                <artifactId>seryu-framework-security-interface</artifactId>
                 <version>${seryu.version}</version>
             </dependency>
             <dependency>
@@ -54,17 +72,17 @@
             <dependency>
                 <groupId>com.baomidou</groupId>
                 <artifactId>mybatis-plus-core</artifactId>
-                <version>3.2.0</version>
+                <version>${mybatis-plus.version}</version>
             </dependency>
             <dependency>
                 <groupId>com.baomidou</groupId>
                 <artifactId>mybatis-plus</artifactId>
-                <version>3.2.0</version>
+                <version>${mybatis-plus.version}</version>
             </dependency>
             <dependency>
                 <groupId>com.baomidou</groupId>
                 <artifactId>mybatis-plus-extension</artifactId>
-                <version>3.2.0</version>
+                <version>${mybatis-plus.version}</version>
             </dependency>
             <!-- mybatis plugs end -->
 
@@ -72,14 +90,71 @@
             <dependency>
                 <groupId>org.springframework</groupId>
                 <artifactId>spring-context</artifactId>
-                <version>5.2.3.RELEASE</version>
+                <version>${spring.version}</version>
             </dependency>
             <dependency>
                 <groupId>org.springframework</groupId>
                 <artifactId>spring-tx</artifactId>
-                <version>5.2.3.RELEASE</version>
+                <version>${spring.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.security</groupId>
+                <artifactId>spring-security-web</artifactId>
+                <version>${spring.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.security</groupId>
+                <artifactId>spring-security-config</artifactId>
+                <version>${spring.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-webmvc</artifactId>
+                <version>${spring.version}</version>
             </dependency>
             <!-- spring framework end -->
+
+            <!--jwt start -->
+            <dependency>
+                <groupId>io.jsonwebtoken</groupId>
+                <artifactId>jjwt-api</artifactId>
+                <version>${jjwt.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.jsonwebtoken</groupId>
+                <artifactId>jjwt-impl</artifactId>
+                <version>${jjwt.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.jsonwebtoken</groupId>
+                <artifactId>jjwt-jackson</artifactId>
+                <version>${jjwt.version}</version>
+            </dependency>
+            <!-- jwt end -->
+
+            <!-- springboot start -->
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot</artifactId>
+                <version>${springboot-verison}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-autoconfigure</artifactId>
+                <version>${springboot-verison}</version>
+            </dependency>
+            <!-- springboot end -->
+
+            <dependency>
+                <groupId>javax.servlet</groupId>
+                <artifactId>servlet-api</artifactId>
+                <version>${servlet.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>fastjson</artifactId>
+                <version>${fastjson.version}</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
 
