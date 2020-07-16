@@ -18,6 +18,8 @@ import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.binding.MapperMethod;
 import org.apache.ibatis.session.SqlSession;
 import org.seryu.framework.data.dto.BaseDto;
+import org.seryu.framework.data.gateway.BaseGatewayI;
+import org.seryu.framework.data.gateway.DtoConverter;
 import org.seryu.framework.data.page.Page;
 import org.seryu.framework.data.page.PageData;
 import org.seryu.framework.data.util.StringUtil;
@@ -40,11 +42,6 @@ public abstract class BaseGatewayImpl<M extends BaseMapper<T>, T, D extends Base
   @Autowired protected M baseMapper;
 
   @Autowired private SqlSession sqlSession;
-
-  @Override
-  public M getBaseMapper() {
-    return baseMapper;
-  }
 
   protected Class<?> entityClass = currentModelClass();
 
