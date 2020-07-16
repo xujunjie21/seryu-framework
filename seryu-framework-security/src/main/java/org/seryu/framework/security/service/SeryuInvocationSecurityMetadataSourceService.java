@@ -3,8 +3,8 @@ package org.seryu.framework.security.service;
 import cn.hutool.cache.CacheUtil;
 import cn.hutool.cache.impl.TimedCache;
 import cn.hutool.core.collection.CollectionUtil;
-import org.seryu.framework.security.PermissionServiceQryI;
-import org.seryu.framework.security.bo.PermissionDetailBo;
+import org.seryu.framework.security.SecurityPermissionService;
+import org.seryu.framework.security.bo.SecurityPermissionDetail;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.ConfigAttribute;
 import org.springframework.security.access.SecurityConfig;
@@ -28,10 +28,10 @@ import java.util.Set;
 @Service
 public class SeryuInvocationSecurityMetadataSourceService
     implements FilterInvocationSecurityMetadataSource {
-  @Autowired private PermissionServiceQryI permissionServiceQryI;
+  @Autowired private SecurityPermissionService permissionServiceQryI;
 
   /** 创建定时缓存 */
-  private TimedCache<String, List<PermissionDetailBo>> timedCache =
+  private TimedCache<String, List<SecurityPermissionDetail>> timedCache =
       CacheUtil.newTimedCache(10 * 1000);
 
   private String key = "Permissions";
@@ -40,7 +40,7 @@ public class SeryuInvocationSecurityMetadataSourceService
   public Collection<ConfigAttribute> getAttributes(Object object) throws IllegalArgumentException {
     String requestUrl = ((FilterInvocation) object).getRequestUrl();
     HttpServletRequest request = ((FilterInvocation) object).getHttpRequest();
-    List<PermissionDetailBo> all = timedCache.get(key);
+    List<SecurityPermissionDetail> all = timedCache.get(key);
 
     if (CollectionUtil.isEmpty(all)) {
       synchronized (this) {
@@ -53,7 +53,7 @@ public class SeryuInvocationSecurityMetadataSourceService
     }
 
     AntPathRequestMatcher matcher;
-    for (PermissionDetailBo bo : all) {
+    for (SecurityPermissionDetail bo : all) {
       matcher = new AntPathRequestMatcher(bo.getUrl());
       if (matcher.matches(request)) {
         Set<String> collect = new HashSet<>();

@@ -18,7 +18,7 @@ import java.io.Serializable;
 @Data
 @ToString
 @ApiModel(value = "用户信息", description = "用户信息")
-public class UserDetailBo extends BaseBo implements Serializable {
+public class SecurityUserDetail extends BaseBo implements Serializable {
   @ApiModelProperty(value = "用户Id", name = "id", dataType = "String", example = "FASDYEFFASD")
   private String id;
   @ApiModelProperty(value = "用户昵称", name = "nickname", dataType = "String", example = "张三")

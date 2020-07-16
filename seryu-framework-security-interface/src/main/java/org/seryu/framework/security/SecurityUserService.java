@@ -3,8 +3,8 @@ package org.seryu.framework.security;
 import org.seryu.framework.data.biz.BaseQryI;
 import org.seryu.framework.data.exception.InterfacesException;
 import org.seryu.framework.data.page.PageData;
-import org.seryu.framework.security.bo.UserDetailBo;
-import org.seryu.framework.security.bo.UserDetailQry;
+import org.seryu.framework.security.bo.SecurityUserDetail;
+import org.seryu.framework.security.bo.SecurityUserDetailQry;
 
 /**
  * @program: seryu-framework-security
@@ -12,13 +12,13 @@ import org.seryu.framework.security.bo.UserDetailQry;
  * @author: xujunjie
  * @create: 2020-04-23 11:03
  */
-public interface UserServiceQryI extends BaseQryI {
+public interface SecurityUserService extends BaseQryI {
   /**
    * @description: 根据条件查询用户列表
    * @param qry 用户查询条件
    * @return 用户列表
    */
-  PageData<UserDetailBo> page(UserDetailQry qry) throws InterfacesException;
+  PageData<SecurityUserDetail> page(SecurityUserDetailQry qry) throws InterfacesException;
 
   /**
    * @description: 获取用户信息
@@ -26,12 +26,12 @@ public interface UserServiceQryI extends BaseQryI {
    * @return 用户信息
    * @throws InterfacesException
    */
-  UserDetailBo infoById(String id) throws InterfacesException;
+  SecurityUserDetail infoById(String id) throws InterfacesException;
 
   /**
    * @description: 根据用户名称查询用户信息
    * @param userName 用户名称(账号)
    * @return 用户信息
    */
-  UserDetailBo infoByUser(String userName);
+  SecurityUserDetail infoByUser(String userName);
 }

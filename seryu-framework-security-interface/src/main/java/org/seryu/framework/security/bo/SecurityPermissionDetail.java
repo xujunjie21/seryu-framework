@@ -16,7 +16,7 @@ import java.util.List;
 @Data
 @EqualsAndHashCode(callSuper = true)
 @Accessors(chain = true)
-public class PermissionDetailBo extends BaseBo {
+public class SecurityPermissionDetail extends BaseBo {
   private static final long serialVersionUID = 1L;
   @ApiModelProperty(value = "ID", name = "id", dataType = "Long", example = "")
   private Long id;
@@ -27,5 +27,5 @@ public class PermissionDetailBo extends BaseBo {
   @ApiModelProperty(value = "接口Key", name = "pKey", dataType = "String", example = "")
   private String pKey;
   @ApiModelProperty(value = "拥有该资源的角色列表", name = "pKey", dataType = "String", example = "")
-  private List<RoleDetailBo> roles;
+  private List<SecurityRoleDetail> roles;
 }

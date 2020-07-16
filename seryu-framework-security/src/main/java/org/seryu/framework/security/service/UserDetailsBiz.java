@@ -1,10 +1,10 @@
 package org.seryu.framework.security.service;
 
 import org.seryu.framework.data.enums.StatusEnum;
-import org.seryu.framework.security.RoleServiceQryI;
-import org.seryu.framework.security.UserServiceQryI;
-import org.seryu.framework.security.bo.RoleDetailBo;
-import org.seryu.framework.security.bo.UserDetailBo;
+import org.seryu.framework.security.SecurityRoleService;
+import org.seryu.framework.security.SecurityUserService;
+import org.seryu.framework.security.bo.SecurityRoleDetail;
+import org.seryu.framework.security.bo.SecurityUserDetail;
 import org.seryu.framework.security.dto.JwtUserDto;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
@@ -26,16 +26,16 @@ import java.util.List;
  */
 @Service("userDetailsService")
 public class UserDetailsBiz implements UserDetailsService {
-  @Autowired private UserServiceQryI userServiceQryI;
+  @Autowired private SecurityUserService userServiceQryI;
 
-  @Autowired private RoleServiceQryI roleServiceQryI;
+  @Autowired private SecurityRoleService roleServiceQryI;
 
   @Override
   public UserDetails loadUserByUsername(String userName) throws UsernameNotFoundException {
     return createJwtUser(userServiceQryI.infoByUser(userName));
   }
 
-  private UserDetails createJwtUser(UserDetailBo userDetailBo) {
+  private UserDetails createJwtUser(SecurityUserDetail userDetailBo) {
     JwtUserDto jwtUserDto = new JwtUserDto();
     jwtUserDto.setId(userDetailBo.getId());
     jwtUserDto.setUsername(userDetailBo.getUserName());
@@ -53,7 +53,7 @@ public class UserDetailsBiz implements UserDetailsService {
     List<String> list = Arrays.asList(userDetailBo.getUserRole().split(","));
     list.forEach(
         rid -> {
-          RoleDetailBo bo = roleServiceQryI.infoById(Long.valueOf(rid));
+          SecurityRoleDetail bo = roleServiceQryI.infoById(Long.valueOf(rid));
           GrantedAuthority grantedAuthority = new SimpleGrantedAuthority(bo.getRoleKey());
           grantedAuthorities.add(grantedAuthority);
         });

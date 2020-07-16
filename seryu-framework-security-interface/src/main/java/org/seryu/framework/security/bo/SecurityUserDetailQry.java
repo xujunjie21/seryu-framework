@@ -8,24 +8,22 @@ import org.seryu.framework.data.page.Page;
 
 /**
  * @program: seryu-framework-security
- * @description: 角色查询条件
+ * @description: 用户信息查询条件
  * @author: xujunjie
- * @create: 2020-04-23 13:27
+ * @create: 2020-04-23 11:31
  */
 @Data
 @ToString
-@ApiModel(value = "角色查询条件")
-public class RoleDetailQry extends Page {
-  @ApiModelProperty(value = "角色名称", name = "roleName", dataType = "String", example = "游客")
-  private String roleName;
-  @ApiModelProperty(value = "角色Key", name = "roleKey", dataType = "String", example = "guest")
-  private String roleKey;
-  @ApiModelProperty(
-      value = "状态 1、激活 2、禁用 ",
-      name = "roleName",
-      dataType = "String",
-      example = "java开发")
-  private Integer status;
+@ApiModel(value = "用户查询条件")
+public class SecurityUserDetailQry extends Page {
+  @ApiModelProperty(value = "用户名称", name = "userName", dataType = "String", example = "张三")
+  private String userName;
+  @ApiModelProperty(value = "座机号", name = "phone", dataType = "String")
+  private String phone;
+  @ApiModelProperty(value = "手机号", name = "phoneNumber", dataType = "String")
+  private String phoneNumber;
+  @ApiModelProperty(value = "部门Id", name = "deptId", dataType = "Integer", example = "3")
+  private Long deptId;
   @ApiModelProperty(
       value = "开始时间: YYYY-MM-dd ",
       name = "startTime",

@@ -2,7 +2,7 @@ package org.seryu.framework.security;
 
 import org.seryu.framework.data.biz.BaseQryI;
 import org.seryu.framework.data.exception.InterfacesException;
-import org.seryu.framework.security.bo.PermissionDetailBo;
+import org.seryu.framework.security.bo.SecurityPermissionDetail;
 
 import java.util.List;
 
@@ -12,13 +12,13 @@ import java.util.List;
  * @author: xujunjie
  * @create: 2020-04-22 16:23
  */
-public interface PermissionServiceQryI extends BaseQryI {
+public interface SecurityPermissionService extends BaseQryI {
   /**
    * @description: 获取菜单全量列表
    * @return 资源列表
    * @throws InterfacesException
    */
-  List<PermissionDetailBo> findAll() throws InterfacesException;
+  List<SecurityPermissionDetail> findAll() throws InterfacesException;
 
   /**
    * @description: 根据菜单Id查询菜单列表
@@ -26,5 +26,5 @@ public interface PermissionServiceQryI extends BaseQryI {
    * @return 资源信息
    * @throws InterfacesException
    */
-  PermissionDetailBo infoById(Long id) throws InterfacesException;
+  SecurityPermissionDetail infoById(Long id) throws InterfacesException;
 }
