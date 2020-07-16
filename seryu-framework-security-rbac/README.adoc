@@ -1,0 +1,84 @@
+# 骨架项目使用说明
+
+当前骨架工程是一个针对与分布式系统下，微服务结构的骨架工程，主要分为以下几个module
+
+## 模块说明
+
+
+### xxx-manager-controller(WEB端)
+
+对外http接口服务、分为管理接口包（admin）及终端接口包(api)
+
+* xxx.admin 管理接口包: 主要用于管理方面的接口服务，如针对内部管理后台的前端应用使用
+* xxx.api: 终端接口包: 主要用于终端设备（WEB门户/手机端/终端设备/第三方后台服务）
+* xxx.vo: 视图层：提供接口请求返回对象
+
+* 依赖关系: xxx-manager-client
+
+---
+
+### xxx-manager-client(应用层接口模块-防腐层)
+用于内部工程内或分布式系统中调用的应用接口服务,属于高度和业务逻辑有关。分布式情况下建议将其部分开放为dubbo接口
+
+* api: 当前服务下说有接口包
+** cmd: 用于写改删等相关会对实际数据结果进行改变的接口
+** qry: 用于查询读取数据的接口服务
+* bo: 应用层对象，用于应用层和其他服务或控制层的数据传递
+
+* 依赖关系: xxx-manager-data
+
+---
+
+### xxx-manager-app(应用实现层)
+* api: 当前服务下说有接口包
+** cmd/qry: 应用接口层的具体实现。主要负责业务逻辑串联，调用自己相关领域层或其他服务的业务层接口。
+* 依赖关系: xxx-manager-client、xxx-manager-data、xxx-manager-domain
+
+---
+
+### xxx-manager-domain(领域层接口模块-防腐层)
+* gateway: 领域层接口定义
+* dto: 领域层对象，用于领域层和应用层的数据传递，在业务简单的情况下，有可能直接传递到控制层
+* 依赖关系: xxx-manager-data
+
+---
+
+### xxx-manager-infrastructure(基础设施层)
+* gateway: 领域层接口的具体逻辑实现
+* repository: 存储库，一般功能和DAO层类似，直接与数据库交互
+** Do: 数据库对象，用于数据库层和领域层的数据传递
+** mapper: sql映射包
+* 依赖关系: xxx-manager-data、xxx-manager-domain
+
+---
+
+### xxx-manager-data
+贯穿项目的对象定义
+* 依赖关系: 无
+---
+
+### xxx-manager-dubbo (分布式RPC支持挂件)
+提供接口远程方法执行能力
+
+#### xxx-dubbo-provider (分布式RPC提供者)
+
+* XXXDubboProviderConfig: 扫描dubbo.xml提供者文件
+* xxx/service/dubbo.xml: 提供者服务配置
+* 依赖关系: 无
+
+#### xxx-dubbo-reference (分布式RPC消费者)
+
+* XXXDubboReferenceConfig: 扫描dubbo.xml消费者文件
+* xxx/reference/dubbo.xml: 提供者服务配置
+* 依赖关系: 无
+
+### xxx-manager-starter
+用于将所有模块依赖整合
+* 依赖关系: xxx-manager-client、xxx-manager-app、xxx-manager-controller、xxx-manager-infrastructure、xxx-dubbo-provider
+
+---
+
+### xxx-manager-springboot
+服务启动器
+
+* 依赖关系: xxx-manager-starter

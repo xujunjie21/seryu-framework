@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.seryu.framework.rbac.infrastructure.repository.mapper.PostDetailMapper">
+
+    <!-- 通用查询映射结果1 -->
+    <resultMap id="BaseResultMap" type="org.seryu.framework.rbac.infrastructure.repository.Do.PostDetailDo">
+        <id column="ID" property="id" />
+    <result column="REMARK" property="remark" />
+    <result column="CREATE_USER_ID" property="createUserId" />
+    <result column="CREATE_DATE" property="createDate" />
+    <result column="UPDATE_USER_ID" property="updateUserId" />
+    <result column="UPDATE_DATE" property="updateDate" />
+        <result column="POST_NAME" property="postName" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        REMARK,
+        CREATE_USER_ID,
+        CREATE_DATE,
+        UPDATE_USER_ID,
+        UPDATE_DATE,
+        ID, POST_NAME
+    </sql>
+
+</mapper>

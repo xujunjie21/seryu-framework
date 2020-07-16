@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>org.seryu.framework</groupId>
+    <artifactId>seryu-framework-security-rbac</artifactId>
+    <packaging>pom</packaging>
+
+    <properties>
+        <rbac.version>1.0</rbac.version>
+        <seryu.framework.version>1.0</seryu.framework.version>
+        <seryu.plugs.version>1.0</seryu.plugs.version>
+        <junit.version>4.12</junit.version>
+        <dubbo.version>2.7.6</dubbo.version>
+        <mysql.versinon>5.1.42</mysql.versinon>
+        <fastjson.version>1.2.60</fastjson.version>
+        <mybatis-plus.version>3.2.0</mybatis-plus.version>
+        <mybatis-plus-support.version>2.3.3</mybatis-plus-support.version>
+        <druid.version>1.1.20</druid.version>
+        <spring.version>5.2.3.RELEASE</spring.version>
+        <swagger2.version>2.9.2</swagger2.version>
+    </properties>
+
+    <version>1.0</version>
+
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.2.3.RELEASE</version>
+    </parent>
+
+    <dependencyManagement>
+        <dependencies>
+            <!-- freamwork core start -->
+            <dependency>
+                <groupId>org.seryu.framework</groupId>
+                <artifactId>seryu-framework-data</artifactId>
+                <version>${seryu.framework.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.seryu.framework</groupId>
+                <artifactId>seryu-data-mybaitsPlugs</artifactId>
+                <version>${seryu.framework.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.seryu.framework</groupId>
+                <artifactId>seryu-framework-web</artifactId>
+                <version>${seryu.framework.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.seryu.framework</groupId>
+                <artifactId>seryu-framework-security</artifactId>
+                <version>${seryu.framework.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.seryu.framework</groupId>
+                <artifactId>seryu-framework-core</artifactId>
+                <version>${seryu.framework.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.seryu.framework</groupId>
+                <artifactId>seryu-framework-security-interface</artifactId>
+                <version>${seryu.framework.version}</version>
+            </dependency>
+            <!-- freamwork core end -->
+
+            <!-- business module start -->
+            <dependency>
+                <groupId>org.seryu.framework</groupId>
+                <artifactId>rbac-manager-data</artifactId>
+                <version>${rbac.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.seryu.framework</groupId>
+                <artifactId>rbac-manager-controller</artifactId>
+                <version>${rbac.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.seryu.framework</groupId>
+                <artifactId>rbac-manager-client</artifactId>
+                <version>${rbac.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.seryu.framework</groupId>
+                <artifactId>rbac-manager-app</artifactId>
+                <version>${rbac.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.seryu.framework</groupId>
+                <artifactId>rbac-manager-domain</artifactId>
+                <version>${rbac.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.seryu.framework</groupId>
+                <artifactId>rbac-manager-infrastructure</artifactId>
+                <version>${rbac.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.seryu.framework</groupId>
+                <artifactId>rbac-manager-starter</artifactId>
+                <version>${rbac.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.seryu.framework</groupId>
+                <artifactId>rbac-dubbo-provider</artifactId>
+                <version>${rbac.version}</version>
+            </dependency>
+            <!-- business module end -->
+
+            <!-- third library start -->
+            <dependency>
+                <groupId>org.seryu.plugs</groupId>
+                <artifactId>mybatis-generate-plugs</artifactId>
+                <version>${seryu.plugs.version}</version>
+                <scope>test</scope>
+            </dependency>
+            <dependency>
+                <groupId>junit</groupId>
+                <artifactId>junit</artifactId>
+                <version>${junit.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.dubbo</groupId>
+                <artifactId>dubbo-spring-boot-starter</artifactId>
+                <version>${dubbo.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>fastjson</artifactId>
+                <version>${fastjson.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>mysql</groupId>
+                <artifactId>mysql-connector-java</artifactId>
+                <version>${mysql.versinon}</version>
+                <scope>test</scope>
+            </dependency>
+            <dependency>
+                <groupId>com.baomidou</groupId>
+                <artifactId>mybatis-plus</artifactId>
+                <version>${mybatis-plus.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.baomidou</groupId>
+                <artifactId>mybatis-plus-support</artifactId>
+                <version>${mybatis-plus-support.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>druid</artifactId>
+                <version>${druid.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-jdbc</artifactId>
+                <version>${spring.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.springfox</groupId>
+                <artifactId>springfox-swagger2</artifactId>
+                <version>${swagger2.version}</version>
+            </dependency>
+            <!-- third library end -->
+        </dependencies>
+    </dependencyManagement>
+
+    <repositories>
+        <repository>
+            <id>public</id>
+            <name>aliyun nexus</name>
+            <url>http://maven.aliyun.com/nexus/content/groups/public/</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+        </repository>
+    </repositories>
+
+    <pluginRepositories>
+        <pluginRepository>
+            <id>public</id>
+            <name>aliyun nexus</name>
+            <url>http://maven.aliyun.com/nexus/content/groups/public/</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </pluginRepository>
+    </pluginRepositories>
+<modules>  <module>rbac-manager-app</module>
+    <module>rbac-manager-client</module>
+    <module>rbac-manager-controller</module>
+    <module>rbac-manager-data</module>
+    <module>rbac-manager-domain</module>
+    <module>rbac-manager-infrastructure</module>
+    <module>rbac-manager-springboot</module>
+    <module>rbac-manager-starter</module>
+    <module>rbac-manager-dubbo</module>
+  </modules>
+</project>

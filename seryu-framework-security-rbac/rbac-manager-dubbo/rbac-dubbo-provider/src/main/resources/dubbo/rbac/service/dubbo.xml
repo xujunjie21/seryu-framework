@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:dubbo="http://dubbo.apache.org/schema/dubbo"
+       xmlns="http://www.springframework.org/schema/beans"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.3.xsd
+       http://dubbo.apache.org/schema/dubbo http://dubbo.apache.org/schema/dubbo/dubbo.xsd">
+
+    <dubbo:service interface="org.seryu.framework.rbac.client.api.qry.UserServiceQryI" ref="userServiceQry" timeout="60000" version="1.0.0" />
+    <dubbo:service interface="org.seryu.framework.rbac.client.api.qry.RoleServiceQryI" ref="roleServiceQry" timeout="60000" version="1.0.0" />
+    <dubbo:service interface="org.seryu.framework.rbac.client.api.qry.PermissionServiceQryI" ref="permissionServiceQry" timeout="60000" version="1.0.0" />
+    <dubbo:service interface="org.seryu.framework.rbac.client.api.qry.DictValueServiceQryI" ref="dictValueServiceQry" timeout="6000" version="1.0.0"/>
+
+</beans>

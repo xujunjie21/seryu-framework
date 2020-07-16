@@ -1,0 +1,49 @@
+server:
+  port: 8081 # 端口号请自行修改
+
+spring:
+  application:
+      name: rbac-manager
+  main:
+    allow-bean-definition-overriding: true
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://172.23.0.9:3306/potato-security?zeroDateTimeBehavior=convertToNull&autoReconnect=true
+    username: root
+    password: abc#123
+    type: com.alibaba.druid.pool.DruidDataSource
+jwt:
+  header: Authorization
+  token-start-with: Bearer
+  base64-secret: ZmQ0ZGI5NjQ0MDQwY2I4MjMxY2Y3ZmI3MjdhN2ZmMjNhODViOTg1ZGE0NTBjMGM4NDA5NzYxMjdjOWMwYWRmZTBlZjlhNGY3ZTg4Y2U3YTE1ODVkZDU5Y2Y3OGYwZWE1NzUzNWQ2YjFjZDc0NGMxZWU2MmQ3MjY1NzJmNTE0MzI=
+  token-validity-in-seconds: 14400000
+  online-key: online-token
+  code-key: code-key
+# dubbo配置
+dubbo:
+  application:
+    name: seryu-rbac-provider
+    qos-accept-foreign-ip: false
+    qos-port: 44441
+    qos-enable: true
+  registry:
+    protocol: zookeeper
+    address: zk:2181
+    register: true
+  protocol:
+    name: dubbo
+    port: 28882 # 端口号请自行修改
+    serialization: hessian2
+    threadpool: fixed
+    threads: 100
+    iothreads: 9
+    queues: 0
+    accepts: 1000
+    payload: 8388608
+    charset: UTF-8
+    accesslog: true
+  # dubbo使用zipkin过滤器
+  provider:
+    filter: tracing
+  consumer:
+    filter: tracing
