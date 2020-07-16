@@ -14,6 +14,8 @@
         <module>seryu-framework-web</module>
         <module>seryu-framework-security</module>
         <module>seryu-framework-security-interface</module>
+        <module>seryu-framework-security-rbac</module>
+        <module>seryu-framework-core</module>
     </modules>
 
     <properties>
@@ -28,6 +30,7 @@
         <springboot-verison>2.2.3.RELEASE</springboot-verison>
         <servlet.version>2.5</servlet.version>
         <fastjson.version>1.2.60</fastjson.version>
+        <swagger2.version>2.9.2</swagger2.version>
     </properties>
 
     <dependencyManagement>
@@ -44,7 +47,17 @@
             </dependency>
             <dependency>
                 <groupId>org.seryu.framework</groupId>
+                <artifactId>seryu-framework-security</artifactId>
+                <version>${seryu.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.seryu.framework</groupId>
                 <artifactId>seryu-framework-security-interface</artifactId>
+                <version>${seryu.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.seryu.framework</groupId>
+                <artifactId>seryu-framework-core</artifactId>
                 <version>${seryu.version}</version>
             </dependency>
             <dependency>
@@ -67,7 +80,11 @@
                 <artifactId>slf4j-log4j12</artifactId>
                 <version>${slf4j.version}</version>
             </dependency>
-
+            <dependency>
+                <groupId>io.springfox</groupId>
+                <artifactId>springfox-swagger2</artifactId>
+                <version>${swagger2.version}</version>
+            </dependency>
             <!-- mybatis plugs start -->
             <dependency>
                 <groupId>com.baomidou</groupId>
@@ -95,6 +112,11 @@
             <dependency>
                 <groupId>org.springframework</groupId>
                 <artifactId>spring-tx</artifactId>
+                <version>${spring.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-web</artifactId>
                 <version>${spring.version}</version>
             </dependency>
             <dependency>
