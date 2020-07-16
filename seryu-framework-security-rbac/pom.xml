@@ -12,7 +12,7 @@
         <seryu.plugs.version>1.0</seryu.plugs.version>
         <junit.version>4.12</junit.version>
         <dubbo.version>2.7.6</dubbo.version>
-        <mysql.versinon>5.1.42</mysql.versinon>
+        <mysql.versinon>8.0.16</mysql.versinon>
         <fastjson.version>1.2.60</fastjson.version>
         <mybatis-plus.version>3.2.0</mybatis-plus.version>
         <mybatis-plus-support.version>2.3.3</mybatis-plus-support.version>
