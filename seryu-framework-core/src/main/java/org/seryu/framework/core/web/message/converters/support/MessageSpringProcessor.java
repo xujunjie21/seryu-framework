@@ -24,7 +24,7 @@ import java.util.Arrays;
 @Component
 public class MessageSpringProcessor extends WebApplicationObjectSupport
     implements BeanPostProcessor {
-  @Autowired private SeryuHttpMessageConverter tyydHttpMessageConverter;
+  @Autowired private SeryuHttpMessageConverter seryuHttpMessageConverter;
 
   @Override
   public Object postProcessBeforeInitialization(Object bean, String beanName)
@@ -45,7 +45,7 @@ public class MessageSpringProcessor extends WebApplicationObjectSupport
             MessageConverterParm messageConverterParm =
                 new MessageConverterParm(
                     (HttpMessageConverter) httpMessageConverter, tyydMessageConverter.uri());
-            tyydHttpMessageConverter.createRule(Arrays.asList(messageConverterParm));
+            seryuHttpMessageConverter.createRule(Arrays.asList(messageConverterParm));
             log.info(
                 "【完成】 初始化http消息转换器 name: {} , uris : {}",
                 tyydMessageConverter.name(),
