@@ -1,6 +1,5 @@
-package org.seryu.framework.db.mybatisPlugs.code;
+package org.seryu.framework.data.gateway;
 
-import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 
 import java.io.Serializable;
 import java.util.Collection;
@@ -16,8 +15,6 @@ import java.util.Map;
 public interface BaseGatewayI<T> {
   /** 默认批次提交数量 */
   int DEFAULT_BATCH_SIZE = 1000;
-
-  BaseMapper getBaseMapper();
 
   /**
    * @description: 获取领域转换器

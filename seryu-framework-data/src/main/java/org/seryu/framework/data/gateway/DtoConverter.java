@@ -1,11 +1,11 @@
-package org.seryu.framework.db.mybatisPlugs.code;
+package org.seryu.framework.data.gateway;
+
+import org.springframework.beans.BeanUtils;
+import org.springframework.util.CollectionUtils;
 
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
-
-import org.springframework.beans.BeanUtils;
-import org.springframework.util.CollectionUtils;
 
 /**
  * @program: seryu-framework
