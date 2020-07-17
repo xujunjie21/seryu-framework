@@ -32,24 +32,24 @@ public class MessageSpringProcessor extends WebApplicationObjectSupport
     Method[] methods = ReflectionUtils.getAllDeclaredMethods(bean.getClass());
     if (methods != null) {
       for (Method method : methods) {
-        SeryuMessageConverter tyydMessageConverter =
+        SeryuMessageConverter seryuMessageConverter =
             AnnotationUtils.findAnnotation(method, SeryuMessageConverter.class);
-        if (null != tyydMessageConverter) {
+        if (null != seryuMessageConverter) {
           Object httpMessageConverter =
-              getApplicationContext().getBean(tyydMessageConverter.name());
+              getApplicationContext().getBean(seryuMessageConverter.name());
           if (httpMessageConverter instanceof HttpMessageConverter) {
             log.info(
                 "【开始】 初始化http消息转换器 name: {} , uris : {}",
-                tyydMessageConverter.name(),
-                tyydMessageConverter.uri());
+                seryuMessageConverter.name(),
+                seryuMessageConverter.uri());
             MessageConverterParm messageConverterParm =
                 new MessageConverterParm(
-                    (HttpMessageConverter) httpMessageConverter, tyydMessageConverter.uri());
+                    (HttpMessageConverter) httpMessageConverter, seryuMessageConverter.uri());
             seryuHttpMessageConverter.createRule(Arrays.asList(messageConverterParm));
             log.info(
                 "【完成】 初始化http消息转换器 name: {} , uris : {}",
-                tyydMessageConverter.name(),
-                tyydMessageConverter.uri());
+                seryuMessageConverter.name(),
+                seryuMessageConverter.uri());
           }
         }
       }

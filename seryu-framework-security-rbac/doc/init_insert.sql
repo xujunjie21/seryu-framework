@@ -27,7 +27,7 @@ VALUES
 	(91, '创建角色', '/admin/role/create', 'I_api_role_create', NULL, NULL, '2020-05-06 19:37:26', NULL, '2020-05-06 19:37:26'),
 	(92, '查询角色信息', '/admin/role/info', 'I_api_role_info', NULL, NULL, '2020-05-06 19:37:26', NULL, '2020-05-06 19:37:26'),
 	(93, '角色查询', '/admin/role/index', 'I_api_role_index', NULL, NULL, '2020-05-06 19:37:26', NULL, '2020-05-06 19:37:26'),
-	(94, '上传至HDFS', '/admin/upload/tyydOSS', 'I_api_upload_tyydOSS', NULL, NULL, '2020-05-06 19:37:26', NULL, '2020-05-06 19:37:26'),
+	(94, '上传至HDFS', '/admin/upload/oss', 'I_api_upload_oss', NULL, NULL, '2020-05-06 19:37:26', NULL, '2020-05-06 19:37:26'),
 	(95, '更新用户', '/admin/user/update', 'I_api_user_update', NULL, NULL, '2020-05-06 19:37:26', NULL, '2020-05-06 19:37:26'),
 	(96, '删除用户', '/admin/user/delete', 'I_api_user_delete', NULL, NULL, '2020-05-06 19:37:26', NULL, '2020-05-06 19:37:26'),
 	(97, '创建用户', '/admin/user/create', 'I_api_user_create', NULL, NULL, '2020-05-06 19:37:26', NULL, '2020-05-06 19:37:26'),
