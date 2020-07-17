@@ -2,6 +2,7 @@ package org.seryu.framework.rbac.infrastructure.gateway;
 
 import cn.hutool.core.collection.CollectionUtil;
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
+import lombok.extern.slf4j.Slf4j;
 import org.seryu.framework.rbac.domain.dto.MenuDetailDto;
 import org.seryu.framework.rbac.domain.dto.RoleDetailDto;
 import org.seryu.framework.rbac.domain.dto.RoleMenuDto;
@@ -27,6 +28,7 @@ import java.util.stream.Collectors;
  * @author: xujunjie
  * @create: 2020-05-07 09:36
  */
+@Slf4j
 @Service
 public class RoleDetailGatewayImpl extends RoleDetailRepository implements RoleDetailGateway {
   @Autowired private RoleMenuRepository roleMenuRepository;
@@ -105,6 +107,11 @@ public class RoleDetailGatewayImpl extends RoleDetailRepository implements RoleD
   @Override
   public RoleDetailDto getById(Serializable id) {
     RoleDetailDto roleDetailDto = super.getById(id);
+    if (null == roleDetailDto) {
+      log.error("角色信息不存在 {}", id);
+      return null;
+    }
+
     List<Long> roleMenuDos = getMenuIdsByRoleId(roleDetailDto.getId());
     if (!CollectionUtil.isEmpty(roleMenuDos)) {
       List<MenuDetailDo> menuDetailDos =

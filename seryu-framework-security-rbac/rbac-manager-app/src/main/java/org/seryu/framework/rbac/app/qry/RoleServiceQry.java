@@ -40,6 +40,9 @@ public class RoleServiceQry implements RoleServiceQryI {
   @Override
   public RoleDetailBo infoById(Long id) throws InterfacesException {
     RoleDetailDto roleDetailDto = roleDetailGateway.getById(id);
+    if (null == roleDetailDto) {
+      return null;
+    }
     RoleDetailBo bo = converterUtil.conver(roleDetailDto, RoleDetailBo.class);
     if (!CollectionUtil.isEmpty(roleDetailDto.getRoleMenu())) {
       bo.setRoleMenu(

@@ -54,8 +54,10 @@ public class UserDetailsBiz implements UserDetailsService {
     list.forEach(
         rid -> {
           SecurityRoleDetail bo = roleServiceQryI.infoById(Long.valueOf(rid));
-          GrantedAuthority grantedAuthority = new SimpleGrantedAuthority(bo.getRoleKey());
-          grantedAuthorities.add(grantedAuthority);
+          if (null != bo) {
+            GrantedAuthority grantedAuthority = new SimpleGrantedAuthority(bo.getRoleKey());
+            grantedAuthorities.add(grantedAuthority);
+          }
         });
     jwtUserDto.setAuthorities(grantedAuthorities);
 
