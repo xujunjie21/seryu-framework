@@ -93,7 +93,7 @@ public abstract class BaseGatewayImpl<M extends BaseMapper<T>, T, D extends Base
       Assert.notNull(tableInfo, "错误:无法执行。因为找不到实体的TableInfo缓存！");
       String keyProperty = tableInfo.getKeyProperty();
       Assert.notEmpty(keyProperty, "错误: 无法执行。因为在实体中找不到id列!");
-      Object idVal = ReflectionKit.getMethodValue(cls, dto, tableInfo.getKeyProperty());
+      Object idVal = ReflectionKit.getMethodValue(dto.getClass(), dto, tableInfo.getKeyProperty());
       return StringUtils.checkValNull(idVal) || Objects.isNull(getById((Serializable) idVal))
           ? save(dto)
           : updateById(dto);
@@ -113,7 +113,7 @@ public abstract class BaseGatewayImpl<M extends BaseMapper<T>, T, D extends Base
       int i = 0;
       for (D dto : dtoList) {
         T entity = getDtoConverter().coverDo(dto);
-        Object idVal = ReflectionKit.getMethodValue(cls, entity, keyProperty);
+        Object idVal = ReflectionKit.getMethodValue(entity.getClass(), entity, keyProperty);
         if (StringUtils.checkValNull(idVal) || Objects.isNull(getById((Serializable) idVal))) {
           entity = savePoint(entity);
           batchSqlSession.insert(sqlStatement(SqlMethod.INSERT_ONE), entity);
