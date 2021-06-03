@@ -10,7 +10,7 @@
         <rbac.version>1.0</rbac.version>
         <seryu.framework.version>1.0</seryu.framework.version>
         <seryu.plugs.version>1.0</seryu.plugs.version>
-        <junit.version>4.12</junit.version>
+        <junit.version>4.13.1</junit.version>
         <dubbo.version>2.7.6</dubbo.version>
         <mysql.versinon>5.1.42</mysql.versinon>
         <fastjson.version>1.2.60</fastjson.version>
