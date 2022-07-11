@@ -27,7 +27,7 @@
         <jjwt.version>0.10.6</jjwt.version>
         <spring.version>5.2.10.RELEASE</spring.version>
         <mybatis-plus.version>3.2.0</mybatis-plus.version>
-        <springboot-verison>2.2.3.RELEASE</springboot-verison>
+        <springboot-verison>2.2.11.RELEASE</springboot-verison>
         <servlet.version>2.5</servlet.version>
         <fastjson.version>1.2.60</fastjson.version>
         <swagger2.version>2.9.2</swagger2.version>
