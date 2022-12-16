@@ -25,7 +25,7 @@
         <slf4j.version>1.7.30</slf4j.version>
         <seryu.version>1.0</seryu.version>
         <jjwt.version>0.10.6</jjwt.version>
-        <spring.version>5.2.10.RELEASE</spring.version>
+        <spring.version>5.2.20.RELEASE</spring.version>
         <mybatis-plus.version>3.2.0</mybatis-plus.version>
         <springboot-verison>2.2.3.RELEASE</springboot-verison>
         <servlet.version>2.5</servlet.version>
